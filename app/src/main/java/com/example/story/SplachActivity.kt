@@ -16,7 +16,7 @@ class SplachActivity : AppCompatActivity() {
     private fun moveToAnotherActivity(){
         // هذا الكود يقوم بتأخير الانتقال من واجهة الى واجهة اخرى
         Handler(Looper.myLooper()!!).postDelayed({
-            finish() // هذه الدالة تستخدم لحذف واجهة التحميل بعد ان تطهر لمرة واحدة
+            finish() // هذه الدالة تستخدم لحذف واجهة التحميل بعد ان تظهر لمرة واحدة
             val i: Intent = Intent(this,Login::class.java)
             startActivity(i)
         } ,2400)
