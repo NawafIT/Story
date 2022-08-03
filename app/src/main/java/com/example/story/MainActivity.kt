@@ -68,10 +68,11 @@ class MainActivity : AppCompatActivity() {
          nav?.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.Home2 -> {
-
+                    drawer?.closeDrawer(GravityCompat.START)
                     true
                 }
                 R.id.logout2 -> {
+                    finish()
                     val i: Intent = Intent(this, Login::class.java)
                     startActivity(i)
                     true
