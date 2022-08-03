@@ -45,7 +45,6 @@ class Login : AppCompatActivity() {
                     finish()
                     val i: Intent = Intent(this, MainActivity::class.java)
                     i.putExtra("name" , users.name)
-                    i.putExtra("password", users.pass)
                     startActivity(i)
                     break
                 }else{

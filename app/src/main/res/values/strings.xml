@@ -5,4 +5,8 @@
     <string name="login">تسجيل الدخول</string>
     <string name="agree">اوافق على الشروط والاحكام</string>
     <string name="state">حالة التسجيل</string>
+    <string name="Home">الرئيسية</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
