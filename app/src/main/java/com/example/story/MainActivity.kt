@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 import kotlin.system.exitProcess
 
@@ -19,17 +20,16 @@ class MainActivity : AppCompatActivity() {
     private var tool: Toolbar? = null
     private var nav: NavigationView? = null
     private var welcome: TextView? = null
+    private var recycler: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-
         connectView()
         val i: Intent = intent
         setSupportActionBar(tool!!)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         changeNameOnHeader(i.getStringExtra("name").toString())
         startUp()
         drawerClicks()
@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         drawer = findViewById(R.id.drawer)
         tool = findViewById(R.id.bar)
         nav = findViewById(R.id.navView)
+        recycler = findViewById(R.id.recycler)
 
     }
     private fun startUp(){

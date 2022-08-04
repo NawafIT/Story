@@ -74,13 +74,7 @@
         android:buttonTint="#C36AD0FF"
         android:text="@string/agree"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:translationY="100dp"
-        android:translationX="200dp"
-        android:rotation="-50"
-        android:background="@drawable/gradient1"/>
+
 
 
 
