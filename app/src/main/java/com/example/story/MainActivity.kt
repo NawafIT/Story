@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import kotlin.system.exitProcess
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private var nav: NavigationView? = null
     private var welcome: TextView? = null
     private var recycler: RecyclerView? = null
+    private var addstory: FloatingActionButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         changeNameOnHeader(i.getStringExtra("name").toString())
         startUp()
         drawerClicks()
+        addStory()
+        displayStory()
 
     }
 
@@ -41,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         tool = findViewById(R.id.bar)
         nav = findViewById(R.id.navView)
         recycler = findViewById(R.id.recycler)
+        addstory = findViewById(R.id.addstory)
 
     }
     private fun startUp(){
@@ -82,5 +87,23 @@ class MainActivity : AppCompatActivity() {
                 else -> true
             }
         }
+    }
+
+    // to add story
+    private fun addStory(){
+        addstory?.setOnClickListener {
+            val i :Intent  = Intent(this@MainActivity, Addstory::class.java)
+            startActivity(i)
+        }
+    }
+
+    private fun displayStory(){
+        val arr:ArrayList<Story> = ArrayList()
+        arr.add(Story("My first story", "this is subtitle", "I wish to be prof in developer apps"))
+        arr.add(Story("This Second story", "this is subtitle", "I wish to be prof in developer apps"))
+        arr.add(Story("My third story", "this is subtitle", "I wish to be prof in developer apps"))
+        val storyAdapter:StoryAdapter = StoryAdapter(arr,this)
+        recycler?.adapter = storyAdapter
+
     }
 }
