@@ -28,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         connectView()
-        val i: Intent = intent
+
         setSupportActionBar(tool!!)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
+        val i: Intent = intent
         changeNameOnHeader(i.getStringExtra("name").toString())
         startUp()
         drawerClicks()
