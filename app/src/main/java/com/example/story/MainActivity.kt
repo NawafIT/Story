@@ -82,7 +82,6 @@ class MainActivity : AppCompatActivity() {
                     val i: Intent = Intent(this, Login::class.java)
                     startActivity(i)
                     true
-
                 }
                 else -> true
             }
@@ -98,12 +97,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayStory(){
+
         val arr:ArrayList<Story> = ArrayList()
-        arr.add(Story("My first story", "this is subtitle", "I wish to be prof in developer apps"))
-        arr.add(Story("This Second story", "this is subtitle", "I wish to be prof in developer apps"))
-        arr.add(Story("My third story", "this is subtitle", "I wish to be prof in developer apps"))
         val storyAdapter:StoryAdapter = StoryAdapter(arr,this)
         recycler?.adapter = storyAdapter
+
+        val i: Intent = intent
+        if(i.getStringExtra("titleStory")!= null){
+
+            arr.add(Story(i.getStringExtra("titleStory").toString(),
+                i.getStringExtra("subtitleStory").toString(),
+                i.getStringExtra("descStory").toString()))
+            storyAdapter.notifyDataSetChanged()
+
+        }
 
     }
 }

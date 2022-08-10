@@ -20,8 +20,7 @@ class StoryDetalis : AppCompatActivity() {
         setSupportActionBar(tool!!)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-//            val i: Intent = Intent(this, MainActivity::class.java)
-//            startActivity(i)
+
         val titles = intent.getStringExtra("title")
         val desc = intent.getStringExtra("description")
         supportActionBar?.title = titles

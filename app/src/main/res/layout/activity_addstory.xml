@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Addstory">
 
     <EditText
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:id="@+id/addTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +23,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:id="@+id/addSubTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,6 +39,8 @@
         app:layout_constraintTop_toBottomOf="@+id/addTitle" />
 
     <EditText
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:id="@+id/writeStory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,7 +52,8 @@
         android:hint="@string/story"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addSubTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/addSubTitle"/>
+
 
     <Button
         android:id="@+id/addStory"
@@ -54,7 +63,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:text="@string/addstory"
-
+        app:backgroundTint="@null"
+        android:textSize="23sp"
+        android:background="@drawable/buttoncolor"
         android:layout_margin="16dp"/>
 
 
